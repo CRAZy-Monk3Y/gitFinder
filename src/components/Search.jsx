@@ -54,7 +54,7 @@ const Search = ({ setUserData, setLoading }) => {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           type="text"
-          placeholder="Enter User Id"
+          placeholder="Enter User Id (eg. CRAZy-Monk3Y) "
         />
       </Form.Group>
       <Button className="btn-success mt-2" type="submit">
