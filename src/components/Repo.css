@@ -1,0 +1,30 @@
+.my_card {
+  background-color: #a6a3a3da;
+  margin-bottom: 1rem;
+  border-radius: 0.7rem;
+}
+
+.lang {
+  text-transform: uppercase;
+  vertical-align: middle;
+  width: min-content;
+  border-radius: 3px !important;
+}
+
+.my_card:hover {
+  background-color: #a9a9a9;
+}
+
+.black {
+  color: #000;
+  /* font-size: larger; */
+  font-weight: bold;
+}
+
+.black:hover {
+  text-decoration: underline;
+}
+
+.w_full {
+  width: 30vw;
+}

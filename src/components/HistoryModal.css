@@ -1,0 +1,14 @@
+.contact_details {
+  background-color: #a6a3a3da;
+  margin-bottom: 1rem;
+  border-radius: 0.7rem;
+}
+
+.contact_details:hover {
+  background-color: #a9a9a9;
+}
+.my_btn_style {
+  height: 2rem;
+  margin-left: 1rem !important;
+  margin-right: 1rem !important;
+}

@@ -1,0 +1,10 @@
+.text_green {
+  color: #28a745;
+  font-weight: bolder;
+}
+.details {
+  line-height: 50%;
+}
+p > a {
+  color: black;
+}
