@@ -19,8 +19,10 @@ const Search = ({ setUserData, setLoading }) => {
       }
       // setQuery(resp);
       // console.log(resp);
-      setUserData(resp);
-      addUserToLocalStorage(resp, query);
+      else {
+        setUserData(resp);
+        addUserToLocalStorage(resp, query);
+      }
     } catch (error) {
       setAlertMessage({ message: error.message });
       setUserData(null);
