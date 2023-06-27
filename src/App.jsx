@@ -13,7 +13,7 @@ function App() {
     <div className="main_app">
       <NavBar />
       <h1 className="text-center mt-2">Search Users on Github</h1>
-      <Search setUserData={setUserData} setLoading={setLoading} />
+      <Search setUserData={setUserData} userData={userData} setLoading={setLoading} />
 
       <UserProfile userData={userData} loading={loading} />
     </div>

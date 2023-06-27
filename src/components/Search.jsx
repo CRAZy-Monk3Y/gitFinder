@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form, Toast } from "react-bootstrap";
 
-const Search = ({ setUserData, setLoading }) => {
+const Search = ({ userData, setUserData, setLoading }) => {
   const [query, setQuery] = useState("");
   const [alertMessage, setAlertMessage] = useState({ message: "" });
 
@@ -10,6 +10,8 @@ const Search = ({ setUserData, setLoading }) => {
 
     // check if we have a query
     if (!query || query.length === 0) return;
+    // check if we are already displaying the user
+    if (userData && userData.login === query) return;
     setLoading(true);
     try {
       const res = await fetch(`https://api.github.com/users/${query}`);
