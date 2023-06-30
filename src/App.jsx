@@ -1,4 +1,3 @@
-import { Container } from "react-bootstrap";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Search from "./components/Search";
@@ -13,7 +12,11 @@ function App() {
     <div className="main_app">
       <NavBar />
       <h1 className="text-center mt-2">Search Users on Github</h1>
-      <Search setUserData={setUserData} userData={userData} setLoading={setLoading} />
+      <Search
+        setUserData={setUserData}
+        userData={userData}
+        setLoading={setLoading}
+      />
 
       <UserProfile userData={userData} loading={loading} />
     </div>
