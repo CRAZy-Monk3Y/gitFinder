@@ -3,6 +3,7 @@ import { Button, Form, Toast } from "react-bootstrap";
 
 const Search = ({ userData, setUserData, setLoading }) => {
   const [query, setQuery] = useState("");
+  const [changedQuery, setChangedQuery] = useState(false);
   const [alertMessage, setAlertMessage] = useState({ message: "" });
 
   async function handleSubmit(e) {
@@ -10,15 +11,15 @@ const Search = ({ userData, setUserData, setLoading }) => {
 
     // check if we have a query
     if (!query || query.length === 0) return;
-    // check if we are already displaying the user
-    if (userData && userData.login === query) return;
+    // check if we are already displaying the user or we are re searching the same query
+    if (!changedQuery || (userData && userData.login === query)) return;
     setLoading(true);
     try {
       const res = await fetch(`https://api.github.com/users/${query}`);
       const resp = await res.json();
       if (resp.message) {
         setAlertMessage({ message: resp.message });
-        setUserData(null)
+        setUserData(null);
       }
       // setQuery(resp);
       // console.log(resp);
@@ -31,6 +32,7 @@ const Search = ({ userData, setUserData, setLoading }) => {
       setUserData(null);
     } finally {
       setLoading(false);
+      setChangedQuery(false);
     }
 
     // reset the field
@@ -57,7 +59,10 @@ const Search = ({ userData, setUserData, setLoading }) => {
       <Form.Group>
         <Form.Control
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) => {
+            setQuery(e.target.value);
+            setChangedQuery(true);
+          }}
           type="text"
           placeholder="Enter User Id (eg. CRAZy-Monk3Y) "
         />
