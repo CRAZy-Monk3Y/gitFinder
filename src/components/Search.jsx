@@ -18,6 +18,7 @@ const Search = ({ userData, setUserData, setLoading }) => {
       const resp = await res.json();
       if (resp.message) {
         setAlertMessage({ message: resp.message });
+        setUserData(null)
       }
       // setQuery(resp);
       // console.log(resp);
